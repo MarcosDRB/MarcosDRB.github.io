@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La alimentación en el ambiente escolar</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== Tus estilos originales + TOQUES FINALES DE BELLEZA ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f8f9fa 0%, #eef2f7 100%);
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #27ae60; /* Verde más vibrante */
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.12);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            color: #27ae60;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+
+        h1:hover {
+            color: #219653;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            color: #e67e22;
+            margin: 40px 0 22px;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #e67e22;
+            border-radius: 3px;
+        }
+
+        h2::before {
+            content: "🍃 ";
+            color: #27ae60;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 1.12rem;
+            color: #34495e;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #2980b9;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .byline {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+        .photo-section {
+            margin: 50px 0;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .photo-section:hover {
+            transform: scale(1.015);
+        }
+
+        .photo {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 14px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            margin: 15px auto;
+            display: block;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 4px solid white;
+            /* Sombra interna sutil */
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(0,0,0,0.03);
+        }
+
+        /* Efecto especial en la primera imagen */
+        .photo-section:first-child .photo {
+            animation: gentlePulse 2s infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.005); }
+        }
+
+        .photo:hover {
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+            border-color: #27ae60;
+        }
+
+        .caption {
+            font-size: 1.05rem;
+            color: #555;
+            margin-top: 16px;
+            font-style: italic;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 25px;
+            border-top: 3px solid #27ae60;
+            color: #7f8c8d;
+            font-size: 1.05rem;
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.1);
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+        }
+
+        /* ===== Responsive mejorado ===== */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .photo {
+                border-radius: 12px;
+            }
+
+            .caption {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            header, footer {
+                border-radius: 12px;
+            }
+        }
+
+        /* Animación suave al cargar */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section,
+        header,
+        footer {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Portada -->
+        <header>
+            <h1>La alimentación en el ambiente escolar: entre lo saludable y lo rápido</h1>
+            <p class="subtitle">Un recorrido fotográfico por los hábitos alimenticios escolares</p>
+            <p class="byline">Por [Andrea Gonzales ,Sebastian Hurtado , Jesus Marquez , Marcos Rojano y Valerie Uparela
+                ]  [30/09/2025]</p>
+        </header>
+
+        <!-- Introducción -->
+        <section>
+            <p>
+                En los colegios, la alimentación de los estudiantes refleja un equilibrio (o un desequilibrio) entre lo
+                que es saludable y lo que es fácil de consumir. Este reportaje gráfico busca mostrar cómo conviven
+                alimentos nutritivos con frituras y meriendas rápidas, y cómo estos influyen en la vida escolar.
+            </p>
+        </section>
+
+        <!-- Cuerpo del reportaje -->
+        <section>
+            <div class="photo-section">
+                <img src="img/lugar donde comen.jpeg" alt="El lugar donde comen" class="photo">
+                <p class="caption">El espacio de alimentación es un punto de encuentro que marca la rutina diaria de los
+                    estudiantes. En este lugar los estudiantes no solo comen, sino que tambien pueden aprovechar el
+                    tiempo para realizar un pequeño descanso y despejar su mente.</p>
+            </div>
+
+            <div class="photo-section">
+                <img src="img/comida saludable.jpg" alt="Comida saludable" class="photo">
+                <p class="caption">Frutas, jugos y platos balanceados son opciones que aportan energía y salud para un
+                    mejor rendimiento académico.
+                    Estos alimentos ricos en vitaminas, fibra y proteínas ayudan a mantener la concentración durante las
+                    clases.
+                    Además, fomentan hábitos alimenticios que pueden perdurar durante toda la vida.</p>
+            </div>
+
+            <div class="photo-section">
+                <img src="img/fritos.png" alt="Comida frita" class="photo">
+                <p class="caption">Aunque son muy consumidas, las frituras y comidas rápidas pueden afectar la salud si
+                    no se equilibran con alimentos nutritivos.
+                    Su alto contenido de grasas saturadas, sal y azúcares puede provocar fatiga, dificultad para
+                    concentrarse e incluso problemas digestivos durante la jornada escolar.</p>
+            </div>
+
+            <div class="photo-section">
+                <img src="img/vs.png" alt="Comparación saludable vs. frita" class="photo">
+                <p class="caption">En el colegio conviven dos realidades: lo saludable y lo rápido. La elección de los
+                    estudiantes depende de accesibilidad, gustos y economía.
+                    Muchos optan por lo más económico, incluso si no es lo más
+                    nutritivo.
+                    Por eso, es fundamental que las instituciones educativas promuevan entornos alimenticios que hagan
+                    lo saludable también lo más fácil y atractivo.</p>
+            </div>
+        </section>
+
+        <!-- Conclusión -->
+        <section>
+            <h2>Conclusión</h2>
+            <p>
+                La alimentación en los colegios es un reflejo de la sociedad: entre lo ideal y lo cotidiano. Promover
+                una dieta balanceada no significa eliminar lo que gusta, sino crear conciencia de la importancia de
+                combinar sabor, salud y bienestar.
+                Pequeños cambios, como incluir más frutas en el recreo o reducir el uso de envases ultraprocesados,
+                pueden marcar una gran diferencia a largo plazo.
+                Al final, educar en hábitos alimenticios es también educar en cuidado personal, responsabilidad y
+                respeto por el cuerpo.
+            </p>
+        </section>
+
+        <!-- Créditos -->
+        <footer>
+            <p><strong>Fotografías:</strong> [Jesus Marquez]</p>
+            <p><strong>Redacción:</strong> [Marcos Rojano]</p>
+        </footer>
+    </div>
+
+    <script>
+        // Carga suave de imágenes (sin cambios)
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.photo');
+            images.forEach(img => {
+                img.style.opacity = '0';
+                img.onload = () => {
+                    img.style.transition = 'opacity 0.5s ease';
+                    img.style.opacity = '1';
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>
